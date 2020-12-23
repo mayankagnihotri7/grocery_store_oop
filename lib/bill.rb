@@ -2,13 +2,13 @@ require_relative "item"
 require_relative "product_list"
 
 class Bill
-  attr_reader :total_amount, :saved_amount, :items
+  attr_reader :items
 
   def initialize(items)
     @items = items
   end
 
-  def total_amount
+  def final_amount
     calculate_bill
     print_bill
   end

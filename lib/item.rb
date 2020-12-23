@@ -8,11 +8,9 @@ class Item
 
   def calculate_amount
     product = ProductList::Product[item]
-    # puts products
     if discount?(item) && quantity >= product.sale_quantity
       left_quantity = quantity % product.sale_quantity
       final_price = (product.sale_quantity * product.item_sale_price) + (left_quantity * product.price)
-      # final_price = (quantity/product.sale_quantity)*(product.item_sale_price) + (quantity%product.sale_quantity) * (product.price)
     else
       final_price = product.price * quantity
     end

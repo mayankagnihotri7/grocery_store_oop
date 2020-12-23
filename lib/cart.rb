@@ -13,7 +13,7 @@ class Cart
     puts "Order has been confirmed. Thank you.\n\n"
     TakeInput.new.take_input(order)
     cart_items
-    Bill.new(order).total_amount
+    Bill.new(order).final_amount
   end
 
   def cart_items
