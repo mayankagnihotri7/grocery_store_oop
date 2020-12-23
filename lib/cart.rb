@@ -1,4 +1,6 @@
 require_relative "take_input"
+require_relative "item"
+require_relative "bill"
 
 class Cart
   attr_reader :order
@@ -8,11 +10,10 @@ class Cart
   end
 
   def add_to_cart
-   TakeInput.new.take_input(order)
-
-   puts "Order for the following has been confirmed. Thank you.\n\n"
-   
-   return cart_items
+    puts "Order has been confirmed. Thank you.\n\n"
+    TakeInput.new.take_input(order)
+    cart_items
+    Bill.new(order).final_amount
   end
 
   def cart_items
