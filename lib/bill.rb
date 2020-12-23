@@ -14,8 +14,8 @@ class Bill
   end
 
   def calculate_bill
-    puts "Calculating bill. Please wait..."
-    items.each {|item, quantity| Item.new(item, quantity)}
+    puts "Calculating bill. Please wait...\n\n"
+    items.each {|item, quantity| Item.new(item, quantity).calculate_amount}
   end
 
   def print_bill
